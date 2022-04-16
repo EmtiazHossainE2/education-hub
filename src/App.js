@@ -8,6 +8,7 @@ import Login from './pages/Account/Login/Login';
 import Signup from './pages/Account/Signup/Signup';
 import NotFound from './components/NotFound/NotFound';
 import Header from './pages/Shared/Header/Header';
+import Footer from './pages/Shared/Footer/Footer';
 
 const App = () => {
     return (
@@ -22,6 +23,7 @@ const App = () => {
                 <Route path='/signup' element={<Signup/>}></Route>
                 <Route path='*' element={<NotFound/>}></Route>
             </Routes>
+            <Footer/>
         </div>
     );
 };
