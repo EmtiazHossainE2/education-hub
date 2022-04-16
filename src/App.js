@@ -9,10 +9,12 @@ import Signup from './pages/Account/Signup/Signup';
 import NotFound from './components/NotFound/NotFound';
 import Header from './pages/Shared/Header/Header';
 import Footer from './pages/Shared/Footer/Footer';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
     return (
         <div>
+            <Toaster></Toaster>
             <Header></Header>
             <Routes>
                 <Route path='/' element={<Home/>}></Route>

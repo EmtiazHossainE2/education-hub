@@ -30,7 +30,7 @@ const Login = () => {
                     
                     </div>
                     <p className='toggle-page py-2 '>
-                        New to Genius Car Service ?{" "}
+                        New to Education Hub ?{" "}
                         <span onClick={() => navigate("/signup")}>Create New Account</span>
                     </p>
                     <SocialAccount />
