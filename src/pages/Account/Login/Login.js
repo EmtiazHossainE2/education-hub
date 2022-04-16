@@ -10,7 +10,7 @@ const Login = () => {
 
     return (
         <div className='login-bg-img'>
-            <div className="d-block mx-auto w-50  container py-5 ">
+            <div className=" account-container container py-5 ">
                 <div className=" custom-style ">
                     <h3 className='text-center mb-3 py-4'>Welcome Back</h3>
                     <Form >

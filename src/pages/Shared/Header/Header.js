@@ -24,8 +24,6 @@ const Header = () => {
                             <Nav.Link as={CustomLink} to='/home'>Home</Nav.Link>
                             <Nav.Link as={CustomLink} to='/blog'>Blog</Nav.Link>
                             <Nav.Link as={CustomLink} to='/about'>About</Nav.Link>
-                            {/* <Nav.Link as={CustomLink} to='/signup'>Sign up</Nav.Link>
-                            <Nav.Link as={CustomLink} to='/login'>Log in</Nav.Link> */}
                             {user?.uid
                                 ?
                                 ""
@@ -37,10 +35,7 @@ const Header = () => {
                                 <CustomLink className='pb-5' to='/login' onClick={() => signOut(auth)}>Log Out</CustomLink>
                                 :
                                 <CustomLink className='pb-5' to='/login'>Log in</CustomLink>}
-                            {/* <NavDropdown className='p-0 text-light' title="Account" id="collasible-nav-dropdown">
-                                <Nav.Link as={CustomLink} to='/signup'>Sign up</Nav.Link>
-                                <Nav.Link as={CustomLink} to='/login'>Log in</Nav.Link>
-                            </NavDropdown> */}
+                            
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

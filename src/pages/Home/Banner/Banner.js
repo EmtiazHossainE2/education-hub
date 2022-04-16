@@ -21,7 +21,7 @@ const Banner = () => {
                     />
                     <Carousel.Caption >
                         <h3>My Extreme Mission</h3>
-                        <p>functional development to describe individuals who require <br /> assistance for disabilities that may be medical <br /> or psychological. For instance, the Diagnostic Statistical Manual of Mental Disorders.</p>
+                        <p>Functional development to describe individuals who require <br /> assistance for disabilities that may be medical <br /> or psychological. For instance, the Diagnostic Statistical Manual of Mental Disorders.</p>
                         <button className='btn btn-danger'>Explore More</button>
                     </Carousel.Caption>
                 </Carousel.Item>

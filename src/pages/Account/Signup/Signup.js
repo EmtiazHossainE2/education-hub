@@ -10,7 +10,7 @@ const Signup = () => {
 
     return (
         <div className='login-bg-img'>
-            <div className="d-block mx-auto w-50 container py-5 mx-2">
+            <div className="account-container container py-4 ">
                 <div className=" text-light custom-style ">
                     <h3 className='text-center pb-3'>Hello There,</h3>
                     <h5 className='text-center pb-3'>Register now to explore more</h5>
@@ -26,8 +26,8 @@ const Signup = () => {
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Control type="password" className='py-2' name='password' placeholder="Password" required />
                         </Form.Group>
-                        <div className='d-flex '>
-                            <div className='fw-bold text-primary mb-3'>
+                        <div className='d-flex terms-condition   '>
+                            <div className=' mb-3 '>
                                 <input onClick={() => setTerms(!terms)} type="checkbox" name="terms" id="terms" />
                                 <label className={terms ? 'ps-1 text-primary' : 'ps-1 text-danger'} htmlFor="terms" style={{ cursor: 'pointer' }}>Accept Terms and Conditions</label>
                             </div>
