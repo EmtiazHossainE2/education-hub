@@ -1,0 +1,11 @@
+.product-img {
+    width: 270px;
+    height: 270px;
+    border-radius: 16px;
+}
+
+.cart {
+    background-color: rgb(249, 247, 247);
+    border-radius: 10px;
+    box-shadow: 5px 5px #f0efef
+}
