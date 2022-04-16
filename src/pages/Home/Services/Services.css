@@ -1,0 +1,50 @@
+.service-title {
+    position: relative;
+    line-height: 80px;
+    font-size: 30px;
+}
+
+.service-title::before {
+    content: '';
+    background: #ff523b;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    right: 25%;
+    transform: translateX(-50%);
+}
+
+.service-title::after {
+    content: '';
+    background: #ff523b;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 33%;
+    transform: translateX(-50%);
+}
+
+
+@media only screen and (max-width:1200px) {
+    .service-title::before {
+        right: 60%;
+    }
+
+    .service-title::after {
+        left: 75%;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .service-title::before {
+        width: 50px;
+        right: 1%;
+    }
+
+    .service-title::after {
+        width: 50px;
+        left: 10%;
+    }
+}
