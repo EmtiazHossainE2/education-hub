@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../../../images/logo.svg'
 const FooterTop = () => {
     return (
-        <div className='container mt-3 pb-5'>
+        <div className='container  pb-5'>
             <div className="row">
                 <div className="col-md-6 col-sm-12">
                     <div className="row mt-3">

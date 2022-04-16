@@ -29,11 +29,13 @@
     }
     .terms-condition{
         flex-direction: column;
-        
     }
     .terms-condition a{
         padding: 10px;
         text-align: center;
+    }
+    .copy-right{
+        margin-top: 20px;
     }
 }
 @media only screen and (max-width:768px) {

@@ -1,0 +1,28 @@
+.login-bg-img {
+    background: url("../../../images/banner/banner2.jpg");
+    background-color: #231d1d;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+}
+
+.custom-style {
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #231d1d !important;
+    padding: 20px 30px;
+    border-radius: 20px;
+
+}
+
+.toggle-page {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.toggle-page span {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #c2391e;
+}
