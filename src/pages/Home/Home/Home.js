@@ -4,8 +4,8 @@ import './Home.css'
 const Home = () => {
     return (
         <div>
-            <h2>This is home page</h2>
             <Banner />
+            <h2>somthing</h2>
         </div>
     );
 };
