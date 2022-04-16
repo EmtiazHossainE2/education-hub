@@ -6,9 +6,9 @@ import Loading from '../../../components/Loading/Loading';
 import auth from '../../../Firebase/firebase.init';
 
 const RequireAuth = ({ children }) => {
-    const [sendEmailVerification, sending, error] = useSendEmailVerification(auth);
+    const [sendEmailVerification, sending, sendingError] = useSendEmailVerification(auth);
     const [user, userLoading, userError] = useAuthState(auth)
-    console.log('inside ', user)
+    
     let location = useLocation();
 
     if(userLoading || sending){
