@@ -4,7 +4,7 @@ import google from '../../../images/social/Google.png'
 import facebook from '../../../images/social/facebook.png'
 import github from '../../../images/social/github.png'
 import twitter from '../../../images/social/Twitter.png';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../Firebase/firebase.init';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../../../components/Loading/Loading';
@@ -15,38 +15,34 @@ const SocialAccount = () => {
 
     //google
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    //facebook
+    const [signInWithFacebook, facebookUser, facebookLoading, facebookError] = useSignInWithFacebook(auth);
+    //github 
+    const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
 
     let location = useLocation();
 
     let from = location.state?.from?.pathname || "/";
 
     //success
-    if (googleUser) {
+    if (googleUser || facebookUser || githubUser) {
         toast.success(`Welcome to Education Hub `, { id: "welcome" });
         navigate(from)
     }
 
     // loading 
-    if (googleLoading) {
+    if (googleLoading || facebookLoading || githubLoading) {
         return <Loading />
     }
 
     //error 
     let errorMessage;
-    if (googleError) {
+    if (googleError || facebookError || githubError) {
         toast.error(`Something is wrong`, { id: "error" });
         errorMessage = <p className='text-danger'>Error: Something is wrong.Try again please
         </p>
     }
 
-    //
-    const handleFacebook = () => {
-        toast.error(`Facebook Singin not available right now`, { id: "error" });
-    }
-    //
-    const handleGithub = () => {
-        toast.error(`Github Singin not available right now`, { id: "error" });
-    }
     //
     const handleTwitter = () => {
         toast.error(`Twitter Singin not available right now`, { id: "error" });
@@ -62,8 +58,8 @@ const SocialAccount = () => {
             {errorMessage}
             <div className='social-icon d-flex align-items-center justify-content-center container'>
                 <img onClick={() => signInWithGoogle()} src={google} alt="" />
-                <img onClick={handleFacebook} src={facebook} alt="" />
-                <img onClick={handleGithub} src={github} alt="" />
+                <img onClick={() => signInWithFacebook()} src={facebook} alt="" />
+                <img onClick={() => signInWithGithub()} src={github} alt="" />
                 <img onClick={handleTwitter} src={twitter} alt="" />
             </div>
         </div>
