@@ -21,7 +21,7 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<Home/>}></Route>
                 <Route path='/home' element={<Home/>}></Route>
-                <Route path="/checkout" element={
+                <Route path='/details/:detailsId'  element={
                     <RequireAuth>
                         <CheckOut></CheckOut>
                     </RequireAuth>

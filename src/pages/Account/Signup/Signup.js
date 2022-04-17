@@ -6,6 +6,7 @@ import SocialAccount from '../SocialAccount/SocialAccount';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../Firebase/firebase.init'
 import toast from 'react-hot-toast';
+import Loading from '../../../components/Loading/Loading';
 
 const Signup = () => {
     const navigate = useNavigate()
@@ -20,9 +21,13 @@ const Signup = () => {
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
     
-    const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        createError,] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
-    //handleName
+    //handleProfile 
     const handleName = event => {
         const nameValue = event.target.value
         setYourName(nameValue);
@@ -55,11 +60,21 @@ const Signup = () => {
         }
     }
 
+    //loading
+    if(loading){
+        return <Loading/>
+    }
+
+    //error
+    if (createError) {
+        toast.error(`Something is wrong`, { id: "error" });
+    }
 
     // handle Submit
     const handleSubmit = event => {
         event.preventDefault()
 
+        //validation check
         if (yourName.value === "") {
             setYourName({ value: "", error: "Name is required" });
         }
@@ -71,10 +86,11 @@ const Signup = () => {
         }
 
         if (email.value && password.value ) {
+            //create user 
             createUserWithEmailAndPassword(email.value, password.value)
                 .then(() => {
-                    toast.success("Welcome to Ema John", { id: "success" });
-                    navigate("/")
+                    toast.success("Welcome Education Hub", { id: "success" });
+                    navigate(from)
                 })
         }
     }
