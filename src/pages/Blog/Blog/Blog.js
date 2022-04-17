@@ -4,7 +4,7 @@ import { GiThink } from 'react-icons/gi';
 const Blog = () => {
     return (
         <div className='container my-5'>
-            <h1 className='text-center my-5'>Welcome to our blog section</h1>
+            <h1 className='text-center my-5'>Welcome to my blog section</h1>
             <div className='container mb-5 '>
                 <h4 className='text-primary'> <GiThink /> Difference between authorization and authentication ? </h4>
                 <p>From hosting and database, through static storage, messaging, analytics, and app distribution to cloud functions and machine learning, Firebase is truly an all-in-one solution.Firebase API is simply a pleasure to work with.When using NPM, everything is structured into modules, which can then be imported when needed. <br />

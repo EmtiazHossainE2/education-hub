@@ -37,3 +37,5 @@
 7. React rating stars component 
 
 8. React router dom
+
+9. React Animation 
