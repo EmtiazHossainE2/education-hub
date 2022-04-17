@@ -96,8 +96,7 @@ const Login = () => {
         }
     }
 
-
-
+    
     return (
         <div className='login-bg-img'>
             <div className=" account-container container py-5 ">
