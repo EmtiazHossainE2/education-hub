@@ -13,26 +13,28 @@ import { Toaster } from 'react-hot-toast';
 import CheckOut from './components/CheckOut/CheckOut';
 import RequireAuth from './pages/Account/RequireAuth/RequireAuth';
 
+
 const App = () => {
+
     return (
         <div>
             <Toaster></Toaster>
             <Header></Header>
             <Routes>
-                <Route path='/' element={<Home/>}></Route>
-                <Route path='/home' element={<Home/>}></Route>
-                <Route path='/details/:detailsId'  element={
+                <Route path='/' element={<Home />}></Route>
+                <Route path='/home' element={<Home />}></Route>
+                <Route path='/checkout/:checkoutId' element={
                     <RequireAuth>
                         <CheckOut></CheckOut>
                     </RequireAuth>
                 }></Route>
-                <Route path='/blog' element={<Blog/>}></Route>
-                <Route path='/about' element={<About/>}></Route>
-                <Route path='/login' element={<Login/>}></Route>
-                <Route path='/signup' element={<Signup/>}></Route>
-                <Route path='*' element={<NotFound/>}></Route>
+                <Route path='/blog' element={<Blog />}></Route>
+                <Route path='/about' element={<About />}></Route>
+                <Route path='/login' element={<Login />}></Route>
+                <Route path='/signup' element={<Signup />}></Route>
+                <Route path='*' element={<NotFound />}></Route>
             </Routes>
-            <Footer/>
+            <Footer />
         </div>
     );
 };

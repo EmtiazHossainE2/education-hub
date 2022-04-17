@@ -8,10 +8,10 @@ import auth from '../../../Firebase/firebase.init';
 const RequireAuth = ({ children }) => {
     const [sendEmailVerification, sending, sendingError] = useSendEmailVerification(auth);
     const [user, userLoading, userError] = useAuthState(auth)
-    
+
     let location = useLocation();
 
-    if(userLoading || sending){
+    if (userLoading || sending) {
         return <Loading></Loading>
     }
 

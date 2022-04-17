@@ -5,12 +5,12 @@ import useServices from '../../hooks/useServices';
 import Rating from '../Ratings/Ratings';
 
 const CheckOut = () => {
-    const { detailsId } = useParams()
+    const { checkoutId } = useParams()
     const [services] = useServices()
 
-    const singleService = services.find((service) => service.id === (detailsId)
+    const singleService = services.find((service) => service.id === (checkoutId)
     )
-    
+
     //booking toast
     const bookNow = () => {
         toast.success(`Thanks for booking .I will contact you soon .`, { id: "booking" });

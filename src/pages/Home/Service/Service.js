@@ -15,7 +15,7 @@ const Service = ({ service }) => {
                     <h5 className='mt-1 text-capitalize'>{name}</h5>
                     <p className='mb-0'>{description.slice(0, 100)}</p>
                     <h6 className='my-2 fw-bolder'>Price : $ {price}</h6>
-                    <Link to={'/details/' + id}><button className='btn btn-outline-danger text-capitalize mt-4 fw-bold'>Book Now: <span className='ps-3 fs-5'> <BsBookmarkCheckFill/></span> </button></Link>
+                    <Link to={'/checkout/' + id}><button className='btn btn-outline-danger text-capitalize mt-4 fw-bold'>Book Now: <span className='ps-3 fs-5'> <BsBookmarkCheckFill /></span> </button></Link>
                 </div>
             </div>
         </div>

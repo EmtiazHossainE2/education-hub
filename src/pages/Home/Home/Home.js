@@ -6,7 +6,7 @@ import HelpCare from './HelpCare/HelpCare';
 import './Home.css'
 const Home = () => {
     return (
-        <div>
+        <div >
             <Banner />
             <HelpCare />
             <Services />

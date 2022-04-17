@@ -6,3 +6,12 @@
     background-position: center;
     opacity: 1;
 }
+
+.help-container {
+    border: 2px double rgb(44, 28, 28);
+    border-radius: 20px;
+}
+
+.help-img {
+    border-radius: 20px;
+}
