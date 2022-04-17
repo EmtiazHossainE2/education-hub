@@ -13,7 +13,7 @@ const CheckOut = () => {
     
     //booking toast
     const bookNow = () => {
-        toast.success(`Thanks for booking .We will contact you soon .`, { id: "booking" });
+        toast.success(`Thanks for booking .I will contact you soon .`, { id: "booking" });
     }
 
     return (
