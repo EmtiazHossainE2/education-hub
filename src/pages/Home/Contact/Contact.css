@@ -9,3 +9,22 @@
 .contact-container-right div {
     border-radius: 20px;
 }
+
+.right-container {
+    border-radius: 5%;
+    background: #3A3A3A;
+    padding: 100px 20px 50px;
+    position: relative;
+}
+
+.right-container::before {
+    background-image: url('../../../images/contact.webp');
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 70px;
+    background-size: 80px;
+    top: -40px;
+    left: 40%;
+    background-repeat: no-repeat;
+}

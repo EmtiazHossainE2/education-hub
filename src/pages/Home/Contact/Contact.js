@@ -71,7 +71,9 @@ const Contact = () => {
 
 
     return (
-        <div className='overflow-hidden container'>
+        <div data-aos="zoom-out-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine" className='overflow-hidden container'>
             <div className="row py-5">
                 <div className=" col-md-6 py-5 d-flex align-items-center justify-content-center contact-container-left">
                     <Form onSubmit={handleSubmit} className='w-75 '>
@@ -107,7 +109,7 @@ const Contact = () => {
                     </Form>
                 </div>
                 <div className="col-md-6 p-5 d-flex align-items-center justify-content-center contact-container-right">
-                    <div className='bg-light  text-center p-5'>
+                    <div className='bg-light right-container text-center p-5'>
                         <h3 >ADDRESS <span className='fs-1'> <FcBusinessContact /> </span></h3>
                         <p className='fst-italic'>2002, Pirjabad Street, Emtiaz Park, IL, 310310</p>
                         <h5>Email <span className='fs-3'><AiOutlineMail /></span></h5>
