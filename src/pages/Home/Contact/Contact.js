@@ -4,13 +4,15 @@ import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
 import auth from '../../../Firebase/firebase.init';
 import './Contact.css'
+import { FcBusinessContact } from 'react-icons/fc';
+import { AiOutlineMail } from 'react-icons/ai';
+import { BsFillTelephoneOutboundFill } from 'react-icons/bs';
 
 const Contact = () => {
 
 
     const [yourName, setYourName] = useState({ value: "", error: "" })
     const [email, setEmail] = useState({ value: "", error: "" })
-    const [city, setCity] = useState({ value: "", error: "" })
     const [number, setNumber] = useState({ value: "", error: "" })
 
 
@@ -32,11 +34,7 @@ const Contact = () => {
             setEmail({ value: "", error: "Please Provide a valid Email" });
         }
     }
-    //handle city 
-    const handleCity = event => {
-        const cityValue = event.target.value;
-        setCity(cityValue)
-    }
+
 
     //handle number
     const handleNumber = event => {
@@ -56,14 +54,12 @@ const Contact = () => {
         if (email.value === "") {
             setEmail({ value: "", error: "Email is required" });
         }
-        if (city.value === "") {
-            setCity({ value: "", error: "City is required" });
-        }
+
         if (number.value === "") {
             setNumber({ value: "", error: "Number is required" });
         }
 
-        if (yourName.value && email.value && city.value && number.value) {
+        if (yourName.value && email.value && number.value) {
             const name = event.target.name.value
             await updateProfile({ displayName: name });
             toast.success(`Thanks for booking .I will contact you soon .`, { id: "booking" });
@@ -77,7 +73,7 @@ const Contact = () => {
     return (
         <div className='overflow-hidden container'>
             <div className="row py-5">
-                <div className=" col-md-6 py-5 d-flex align-items-center justify-content-center contact-container">
+                <div className=" col-md-6 py-5 d-flex align-items-center justify-content-center contact-container-left">
                     <Form onSubmit={handleSubmit} className='w-75 '>
                         <div className='pb-4 text-center'>
                             <h1 className='text-light fs-1 text-uppercase'>Contact Me</h1>
@@ -93,10 +89,7 @@ const Contact = () => {
                         </Form.Group>
                         {email?.error && <p className="text-danger"> {email.error}</p>}
 
-                        <Form.Group className='mb-3' controlId="validationCustom03">
-                            <Form.Control type="text" onBlur={handleCity} placeholder="City" />
-                        </Form.Group>
-                        {city?.error && <p className="text-danger"> {city.error}</p>}
+
 
                         <Form.Group className="mb-3 " controlId="formBasicNumber">
                             <Form.Control type="text" onBlur={handleNumber} className='py-2' name='number' placeholder=" Contact number" />
@@ -113,8 +106,20 @@ const Contact = () => {
                         </Button>
                     </Form>
                 </div>
-                <div className="col-md-6">
-
+                <div className="col-md-6 p-5 d-flex align-items-center justify-content-center contact-container-right">
+                    <div className='bg-light  text-center p-5'>
+                        <h3 >ADDRESS <span className='fs-1'> <FcBusinessContact /> </span></h3>
+                        <p className='fst-italic'>2002, Pirjabad Street, Emtiaz Park, IL, 310310</p>
+                        <h5>Email <span className='fs-3'><AiOutlineMail /></span></h5>
+                        <p> emtiazhossainrzs@gmail.com</p>
+                        <div >
+                            <h4>PHONE <span><BsFillTelephoneOutboundFill /></span></h4>
+                            <div className='text-primary'>
+                                <p>(123) 456-78-90</p>
+                                <p>(123) 456-78-90</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
