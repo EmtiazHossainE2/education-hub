@@ -4,7 +4,9 @@ import img1 from '../../../../images/bonus/img1.jpg'
 import img2 from '../../../../images/bonus/img2.jpg'
 const HelpCare = () => {
     return (
-        <div className='help-care-bg'>
+        <div data-aos="fade-left"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine" className='help-care-bg'>
             <h1 className='text-center pt-5 pb-4 '>HOW I HELP STUDENT</h1>
             <h3 className='fs-4 fst-italic  pb-5 text-center'>I work individually with each <br /> family to
                 understand their specific needs
@@ -12,7 +14,9 @@ const HelpCare = () => {
             <div className="container">
                 <div className="row g-3">
                     <div className="col-md-6">
-                        <div className="help-container">
+                        <div data-aos="fade-down"
+                            data-aos-easing="linear"
+                            data-aos-duration="1500" className="help-container">
                             <div className='text-center mb-4'>
                                 <img className='w-100 help-img' src={img1} alt="" />
                             </div>
@@ -23,7 +27,9 @@ const HelpCare = () => {
                         </div>
                     </div>
                     <div className="col-md-6">
-                        <div className="help-container">
+                        <div data-aos="fade-down"
+                            data-aos-easing="linear"
+                            data-aos-duration="1500" className="help-container">
                             <div className='text-center mb-4'>
                                 <img className='w-100 help-img' src={img2} alt="" />
                             </div>

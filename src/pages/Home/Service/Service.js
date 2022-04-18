@@ -6,7 +6,9 @@ import { BsBookmarkCheckFill } from 'react-icons/bs';
 const Service = ({ service }) => {
     const { id, name, img, description, price } = service
     return (
-        <div className='col-lg-4 col-md-6 rounded-1 service-container'>
+        <div data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1500" className='col-lg-4 col-md-6 rounded-1 service-container'>
             <div className="cart mx-2 my-4 border border-1 ">
                 <div className='text-center'>
                     <img className='product-img p-1 w-100' src={img} alt="" />

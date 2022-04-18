@@ -6,7 +6,9 @@ import titleImg from './title-separator.png'
 
 const TestiMonials = () => {
     return (
-        <div className='container'>
+        <div data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000" className='container'>
             <div className="row g-3 container pt-3 mb-5">
                 <div className="col-lg-4 col-md-12 d-flex  align-items-center">
                     <div className=" review-details">

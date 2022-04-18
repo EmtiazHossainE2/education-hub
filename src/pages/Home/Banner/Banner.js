@@ -8,10 +8,12 @@ import banner3 from '../../../images/banner/banner3.jpg'
 import { Carousel } from 'react-bootstrap';
 
 const Banner = () => {
-    
+
 
     return (
-        <div className=''>
+        <div data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine" className=''>
             <Carousel>
                 <Carousel.Item>
                     <img
@@ -51,7 +53,7 @@ const Banner = () => {
                         <button className='btn btn-danger'>Explore More</button>
                     </Carousel.Caption>
                 </Carousel.Item>
-                
+
             </Carousel>
         </div>
     );

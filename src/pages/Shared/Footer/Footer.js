@@ -4,9 +4,9 @@ import FooterTop from './FooterTop/FooterTop';
 
 const Footer = () => {
     return (
-        <div  className='  py-4 bg-dark text-light'>
+        <div className='  py-4 bg-dark text-light'>
             <FooterTop />
-            <FooterBottom /> 
+            <FooterBottom />
         </div>
     );
 };
