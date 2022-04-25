@@ -20,17 +20,17 @@ const Signup = () => {
     //react firebase hook 
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
-    
+
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
-        createError,] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+        createError,] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     //handleProfile 
     const handleName = event => {
         const nameValue = event.target.value
-        setYourName(nameValue);
+        setYourName({ value: nameValue, error: "" });
     }
     //handle email
     const handleEmail = event => {
@@ -61,8 +61,8 @@ const Signup = () => {
     }
 
     //loading
-    if(loading){
-        return <Loading/>
+    if (loading) {
+        return <Loading />
     }
 
     //error
@@ -85,7 +85,7 @@ const Signup = () => {
             setPassword({ value: "", error: "Password is required" });
         }
 
-        if (email.value && password.value ) {
+        if (email.value && password.value) {
             //create user 
             createUserWithEmailAndPassword(email.value, password.value)
                 .then(() => {
@@ -106,15 +106,15 @@ const Signup = () => {
 
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3 " controlId="formBasicUsername">
-                            <Form.Control type="name" onBlur={handleName} className='py-2' name='name' placeholder="Enter name"  />
+                            <Form.Control type="name" onBlur={handleName} className='py-2' name='name' placeholder="Enter name" />
                         </Form.Group>
                         {yourName?.error && <p className="text-danger"> {yourName.error}</p>}
                         <Form.Group className="mb-3 " controlId="formBasicEmail">
-                            <Form.Control type="email" onBlur={handleEmail} className='py-2' name='email' placeholder="Enter email"  />
+                            <Form.Control type="email" onBlur={handleEmail} className='py-2' name='email' placeholder="Enter email" />
                         </Form.Group>
                         {email?.error && <p className="text-danger"> {email.error}</p>}
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Control type="password" onBlur={handlePassword} className='py-2' name='password' placeholder="Password"  />
+                            <Form.Control type="password" onBlur={handlePassword} className='py-2' name='password' placeholder="Password" />
                         </Form.Group>
                         {password?.error && <p className="text-danger"> {password.error}</p>}
                         <div className='d-flex terms-condition   '>

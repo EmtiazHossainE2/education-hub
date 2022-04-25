@@ -27,7 +27,8 @@ const CheckOut = () => {
     //handle first name 
     const handleYourName = event => {
         const name = event.target.value;
-        setYourName(name)
+        setYourName({ value: name, error: "" })
+        console.log(name);
     }
 
     //handle email
@@ -42,15 +43,14 @@ const CheckOut = () => {
     //handle city 
     const handleCity = event => {
         const cityValue = event.target.value;
-        setCity(cityValue)
+        setCity({ value: cityValue, error: "" })
     }
 
     //handle number
     const handleNumber = event => {
         const numberValue = event.target.value;
-        setNumber(numberValue)
+        setNumber({ value: numberValue, error: "" })
     }
-
 
     // handle Submit
     const handleSubmit = async (event) => {
@@ -69,15 +69,13 @@ const CheckOut = () => {
         if (number.value === "") {
             setNumber({ value: "", error: "Number is required" });
         }
+        // console.log(yourName.value, email.value, city.value, number.value);
 
         if (yourName.value && email.value && city.value && number.value) {
             const name = event.target.name.value
             await updateProfile({ displayName: name });
             toast.success(`Thanks for booking .I will contact you soon .`, { id: "booking" });
-            console.log(name);
         }
-        // const name = event.target.name.value
-        // console.log(name);
     }
 
 
@@ -92,7 +90,7 @@ const CheckOut = () => {
                         <div className=' px-5'>
                             <h1 className='text-capitalize'> {singleService?.name} </h1>
                             <div className="rating my-2">
-                                <Rating ratings={singleService?.ratings} ></Rating>
+                                {singleService && <Rating ratings={singleService?.ratings} ></Rating>}
                             </div>
                             <h5 className='my-3'>Price $: {singleService?.price} </h5>
                             <p><strong>Description : </strong> {singleService?.description} </p>
