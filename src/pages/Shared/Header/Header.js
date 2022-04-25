@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 import logo from '../../../images/logo.svg'
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import CustomLink from '../../../components/CustomLink/CustomLink';
 import auth from '../../../Firebase/firebase.init';
